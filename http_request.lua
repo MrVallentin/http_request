@@ -15,6 +15,25 @@ local ltn12 = require("ltn12")
 -- http.TIMEOUT = 0.001 -- no blocking
 
 
+local function deepCopy(original)
+	local copy
+	
+	if type(original) == "table" then
+		copy = {}
+		
+		for k, v in next, original, nil do
+			copy[deepCopy(k)] = deepCopy(v)
+		end
+		
+		setmetatable(copy, deepCopy(getmetatable(original)))
+	else
+		copy = original
+	end
+	
+	return copy
+end
+
+
 function http_request(url, body, method, headers, redirect)
 	body = body or ""
 	
