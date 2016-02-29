@@ -142,29 +142,29 @@ public class HTTPRequest
     }
     
     
-    public final static String request(final String url, final Map<String, String> data, String method, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String request(final String url, final Map<?, ?> data, String method, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, urlEncodeUTF8(data), method, headers);
     }
     
-    public final static String request(final String url, final Map<String, String> data, final String method) throws MalformedURLException, IOException
+    public final static String request(final String url, final Map<?, ?> data, final String method) throws MalformedURLException, IOException
     {
         return request(url, data, method, null);
     }
     
-    public final static String request(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String request(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return request(url, data, "GET");
     }
     
     
     
-    public final static String get(final String url, final Map<String, String> data, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String get(final String url, final Map<?, ?> data, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, data, "GET", headers);
     }
     
-    public final static String get(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String get(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return get(url, data, null);
     }
@@ -187,12 +187,12 @@ public class HTTPRequest
     
     
     
-    public final static String post(final String url, final Map<String, String> data, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String post(final String url, final Map<?, ?> data, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, data, "POST", headers);
     }
     
-    public final static String post(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String post(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return post(url, data, null);
     }
@@ -215,12 +215,12 @@ public class HTTPRequest
     
     
     
-    public final static String delete(final String url, final Map<String, String> data, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String delete(final String url, final Map<?, ?> data, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, data, "DELETE", headers);
     }
     
-    public final static String delete(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String delete(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return delete(url, data, null);
     }
@@ -243,12 +243,12 @@ public class HTTPRequest
     
     
     
-    public final static String put(final String url, final Map<String, String> data, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String put(final String url, final Map<?, ?> data, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, data, "PUT", headers);
     }
     
-    public final static String put(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String put(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return put(url, data, null);
     }
@@ -271,12 +271,12 @@ public class HTTPRequest
     
     
     
-    public final static String patch(final String url, final Map<String, String> data, final Map<String, String> headers) throws MalformedURLException, IOException
+    public final static String patch(final String url, final Map<?, ?> data, final Map<String, String> headers) throws MalformedURLException, IOException
     {
         return request(url, data, "PATCH", headers);
     }
     
-    public final static String patch(final String url, final Map<String, String> data) throws MalformedURLException, IOException
+    public final static String patch(final String url, final Map<?, ?> data) throws MalformedURLException, IOException
     {
         return patch(url, data, null);
     }
