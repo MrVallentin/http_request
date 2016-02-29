@@ -4,9 +4,11 @@
 
 Currently ported to:
 
-- PHP (uses cURL)
-- Python (uses http.client and urllib.parse)
-- Lua (uses socket.http and ltn12)
+- PHP
+- Python
+- Java
+- Lua
+
 
 ## PHP
 
@@ -42,6 +44,48 @@ tuple http_post(url, data = None, headers = None)
 tuple http_delete(url, data = None, headers = None)
 tuple http_put(url, data = None, headers = None)
 tuple http_post(url, data = None, headers = None)
+```
+
+
+## Java
+
+The Java wrapper uses the standard `java.io` and `java.net` packages.
+
+```java
+// All the following methods are found in com.vallentinsource.HTTPRequest
+
+// Default parameters aren't supported in Java, but it was more visually pleasing
+// to write the method once, than 4 times.
+
+static String request(
+		String url,
+		String data = null,
+		String method "GET",
+		Map<String, String> headers = null
+	) throws MalformedURLException, IOException
+
+static String request(
+		String url,
+		Map<?, ?> data = null,
+		String method "GET",
+		Map<String, String> headers = null
+	) throws MalformedURLException, IOException
+
+// The following get() method, exists along with a
+// post(), delete(), put() and patch().
+
+static String get(
+		String url,
+		String data = null,
+		Map<String, String> headers = null
+	) throws MalformedURLException, IOException
+
+static String get(
+		String url,
+		Map<?, ?> data = null,
+		Map<String, String> headers = null
+	) throws MalformedURLException, IOException
+
 ```
 
 
