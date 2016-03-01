@@ -8,6 +8,7 @@ Currently ported to:
 - Python
 - Java
 - Lua
+- JavaScript
 
 
 ## PHP
@@ -109,4 +110,35 @@ table http_patch(string url [, string body = "" [, table headers = {} [, boolean
 -- response.body
 -- response.status
 -- response.code
+```
+
+## JavaScript
+
+*The following is an example of what can be done.*
+
+```js
+http_request({
+	method: "POST",
+	url: "http://example.com",
+	data: {
+		str: "Hello World!",
+		num: 16,
+		bool: true,
+		arr: [ "a", "b", "c" ],
+		obj: {
+			"a": "b",
+			"c": "d"
+		}
+	},
+	success: function(body, code, status)
+	{
+		console.log("Success: " + code + " " + status);
+		console.log(body);
+	},
+	error: function(body, code, status)
+	{
+		console.log("Error: " + code + " " + status);
+		console.log(body);
+	}
+});
 ```
