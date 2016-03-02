@@ -38,7 +38,7 @@ function http_request(url, body, method, headers, redirect)
 	body = body or ""
 	
 	method = method or "GET"
-	method:upper()
+	method = method:upper()
 	
 	headers = headers or {}
 	headers = deepCopy(headers)
