@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-# Author: Vallentin <mail@vallentinsource.com>
+# Author: Christian Vallentin <mail@vallentinsource.com>
 # Website: http://vallentinsource.com
 # Repository: https://github.com/MrVallentin/http_request
 #
