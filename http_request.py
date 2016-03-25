@@ -7,7 +7,7 @@
 # Date Created: February 28, 2016
 # Last Modified: February 29, 2016
 # 
-# Developed and tested with Python 3.5.1
+# Developed and tested using Python 3.5.1
 
 import http.client, urllib.parse
 
