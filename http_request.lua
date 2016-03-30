@@ -5,6 +5,8 @@
 --
 -- Date Created: December 14, 2015
 -- Last Modified: December 14, 2015
+--
+-- Developed and tested using Lua 5.1 and Lua 5.2
 
 
 local http = require("socket.http")
