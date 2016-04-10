@@ -4,28 +4,11 @@
 
 Currently ported to:
 
-- PHP
-- Python
-- Java
-- Lua
-- JavaScript
-
-
-## PHP
-
-The PHP wrapper uses cURL, which was added (as a standard) in PHP 4.0.2.
-
-*Throws Exception on error.*
-
-```php
-string http_request($url [, $data = null [, $method = "GET" [, array $headers = array()]]])
-
-string http_get($url [, $data = null [, array $headers = array()]])
-string http_post($url [, $data = null [, array $headers = array()]])
-string http_delete($url [, $data = null [, array $headers = array()]])
-string http_put($url [, $data = null [, array $headers = array()]])
-string http_patch($url [, $data = null [, array $headers = array()]])
-```
+- [Python](https://github.com/MrVallentin/http_request/tree/master/python)
+- [Lua](https://github.com/MrVallentin/http_request/tree/master/lua)
+- [PHP](https://github.com/MrVallentin/http_request/tree/master/php)
+- [Java](https://github.com/MrVallentin/http_request/tree/master/java)
+- [JavaScript](https://github.com/MrVallentin/http_request/tree/master/javascript)
 
 
 ## Python
@@ -45,6 +28,46 @@ tuple http_post(url, data = None, headers = None)
 tuple http_delete(url, data = None, headers = None)
 tuple http_put(url, data = None, headers = None)
 tuple http_post(url, data = None, headers = None)
+```
+
+
+## Lua
+
+The Lua wrapper uses [LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html).
+
+```lua
+-- If redirect is set to true, then response locations will be followed.
+
+table http_request(string url [, string body = "" [, string method = "GET" [, table headers = {} [, boolean redirect = true]]]])
+
+table http_get(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http_post(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http_delete(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http_put(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http_patch(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+
+-- The returned response table contains the following:
+-- response.headers
+-- response.body
+-- response.status
+-- response.code
+```
+
+
+## PHP
+
+The PHP wrapper uses cURL, which was added (as a standard) in PHP 4.0.2.
+
+*Throws Exception on error.*
+
+```php
+string http_request($url [, $data = null [, $method = "GET" [, array $headers = array()]]])
+
+string http_get($url [, $data = null [, array $headers = array()]])
+string http_post($url [, $data = null [, array $headers = array()]])
+string http_delete($url [, $data = null [, array $headers = array()]])
+string http_put($url [, $data = null [, array $headers = array()]])
+string http_patch($url [, $data = null [, array $headers = array()]])
 ```
 
 
@@ -90,28 +113,6 @@ static String get(
 ```
 
 
-## Lua
-
-The Lua wrapper uses [LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html).
-
-```lua
--- If redirect is set to true, then response locations will be followed.
-
-table http_request(string url [, string body = "" [, string method = "GET" [, table headers = {} [, boolean redirect = true]]]])
-
-table http_get(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_post(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_delete(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_put(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_patch(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-
--- The returned response table contains the following:
--- response.headers
--- response.body
--- response.status
--- response.code
-```
-
 ## JavaScript
 
 *The following is an example of what can be done.*
@@ -142,3 +143,12 @@ http_request({
 	}
 });
 ```
+
+
+#### License
+
+This module is shared under the MIT license, and is therefore free to use, shared, distribute and modify.
+See [LICENSE](https://github.com/MrVallentin/http_request/blob/master/LICENSE) for more details.
+
+
+[http_request]: https://github.com/MrVallentin/http_request
