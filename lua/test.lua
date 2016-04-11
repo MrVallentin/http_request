@@ -1,7 +1,7 @@
 
 -- Author: Christian Vallentin <mail@vallentinsource.com>
 -- Website: http://vallentinsource.com
--- Repository: https://github.com/MrVallentin/LuaOOP
+-- Repository: https://github.com/MrVallentin/http_request
 --
 -- Date Created: April 11, 2016
 -- Last Modified: April 11, 2016
