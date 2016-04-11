@@ -4,10 +4,9 @@
 -- Repository: https://github.com/MrVallentin/http_request
 --
 -- Date Created: December 14, 2015
--- Last Modified: December 14, 2015
+-- Last Modified: April 11, 2016
 --
 -- Developed and tested using Lua 5.1 and Lua 5.2
-
 
 local http = require("socket.http")
 local ltn12 = require("ltn12")
@@ -36,7 +35,7 @@ local function deepCopy(original)
 end
 
 
-function http_request(url, body, method, headers, redirect)
+local function http_request(url, body, method, headers, redirect)
 	body = body or ""
 	
 	method = method or "GET"
@@ -99,27 +98,39 @@ function http_request(url, body, method, headers, redirect)
 end
 
 
-function http_get(url, body, headers, redirect)
+local function http_get(url, body, headers, redirect)
 	return http_request(url, body, "GET", headers, redirect)
 end
 
 
-function http_post(url, body, headers, redirect)
+local function http_post(url, body, headers, redirect)
 	return http_request(url, body, "POST", headers, redirect)
 end
 
 
-function http_put(url, body, headers, redirect)
+local function http_put(url, body, headers, redirect)
 	return http_request(url, body, "PUT", headers, redirect)
 end
 
 
-function http_delete(url, body, headers, redirect)
+local function http_delete(url, body, headers, redirect)
 	return http_request(url, body, "DELETE", headers, redirect)
 end
 
 
-function http_patch(url, body, headers, redirect)
+local function http_patch(url, body, headers, redirect)
 	return http_request(url, body, "PATCH", headers, redirect)
 end
 
+
+return {
+	_VERSION = "LuaOOP 1.2",
+	_URL = "https://github.com/MrVallentin/http_request",
+	
+	request = http_request,
+	get = http_get,
+	post = http_post,
+	put = http_put,
+	delete = http_delete,
+	patch = http_patch,
+}

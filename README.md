@@ -36,15 +36,17 @@ tuple http_post(url, data = None, headers = None)
 The Lua wrapper uses [LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html).
 
 ```lua
+local http = require("http_request")
+
 -- If redirect is set to true, then response locations will be followed.
 
-table http_request(string url [, string body = "" [, string method = "GET" [, table headers = {} [, boolean redirect = true]]]])
+table http.request(string url [, string body = "" [, string method = "GET" [, table headers = {} [, boolean redirect = true]]]])
 
-table http_get(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_post(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_delete(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_put(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
-table http_patch(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http.get(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http.post(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http.delete(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http.put(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
+table http.patch(string url [, string body = "" [, table headers = {} [, boolean redirect = true]]])
 
 -- The returned response table contains the following:
 -- response.headers

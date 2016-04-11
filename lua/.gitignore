@@ -1,0 +1,7 @@
+# Lua related files
+lua52/
+lua51_socket/
+test.bat
+
+# VSCode files
+.vscode/
